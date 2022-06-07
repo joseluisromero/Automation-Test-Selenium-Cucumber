@@ -1,7 +1,8 @@
-package runner.pages;
+package com.automation.selenium.cucumber.runner.pages;
 
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -34,6 +35,18 @@ public class BasePage {
 
     public static void navigateTo(String url) {
         driver.get(url);
+    }
+
+    public static void logout() {
+        try {
+            if (driver.findElement(By.xpath("/html/body/app-root/app-dashboard/div/app-topbar/div/ul/li[1]")).isDisplayed())
+                driver.findElement(By.xpath("/html/body/app-root/app-dashboard/div/app-topbar/div/ul/li[1]")).click();
+            if (driver.findElement(By.xpath("//body/app-root[1]/app-dashboard[1]/div[1]/app-topbar[1]/div[1]/ul[1]/li[1]/ul[1]/li[3]/a[1]")).isDisplayed())
+                driver.findElement(By.xpath("//body/app-root[1]/app-dashboard[1]/div[1]/app-topbar[1]/div[1]/ul[1]/li[1]/ul[1]/li[3]/a[1]")).click();
+        } catch (NoSuchElementException e) {
+            System.err.println("Error elemento no encontrado");
+        }
+
     }
 
     public WebElement findId(String locator) {

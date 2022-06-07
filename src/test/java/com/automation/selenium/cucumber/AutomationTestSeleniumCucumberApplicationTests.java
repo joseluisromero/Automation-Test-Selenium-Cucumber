@@ -1,4 +1,4 @@
-package com.automation.selenium.cucumber;
+/*package com.automation.selenium.cucumber;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -10,4 +10,4 @@ class AutomationTestSeleniumCucumberApplicationTests {
 	void contextLoads() {
 	}
 
-}
+}*/
